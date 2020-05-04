@@ -128,3 +128,23 @@ app.listen(3000);
 app.get('/users', function (req, res) {
     res.send(users);
 });
+
+app.get('/users/:id', function (req, res) {
+
+    let id = req.params.id; // on récupère l'Id présent en bout de route
+
+    for (var i = 0; i < users.length; i++) {
+        let currentUser = users[i];
+        if (currentUser.id == id) {
+
+            res.send(currentUser);
+            break;
+        }
+
+    }
+
+    res.statusMessage = "User not found";
+    res.status(404).end();
+}
+
+)
