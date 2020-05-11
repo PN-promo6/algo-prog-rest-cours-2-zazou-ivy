@@ -6,4 +6,5 @@ export class User {
     "email": string;
     "company": string;
     "phone": string;
+    "photo": string;
 }
