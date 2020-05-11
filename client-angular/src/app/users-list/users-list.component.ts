@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-services/data.service';
+import { User } from '../models/user/user';
 
 @Component({
   selector: 'app-users-list',
@@ -7,7 +8,7 @@ import { DataService } from '../services/data-services/data.service';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
-  users: any;
+  public users: User[];
 
   constructor(private dataService: DataService) { }
 
@@ -21,6 +22,15 @@ export class UsersListComponent implements OnInit {
           console.log(error);
         }
       )
+      ;
+    this.dataService.fetchUserById("5eaecda0d01513c7cbbcffa4")
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        error => {
+          console.log(error);
+        }
+      )
   }
-
 }
