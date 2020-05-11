@@ -4,6 +4,6 @@ export class User {
     "name": string;
     "gender": string;
     "email": string;
-    "latitude": number;
-    "longitude": number;
+    "company": string;
+    "phone": string;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-services/data.service';
+import { Subscription } from 'rxjs';
 import { User } from '../models/user/user';
 
 @Component({
@@ -8,7 +9,9 @@ import { User } from '../models/user/user';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
+  usersSubscription: Subscription;
   public users: User[];
+  user: User;
 
   constructor(private dataService: DataService) { }
 

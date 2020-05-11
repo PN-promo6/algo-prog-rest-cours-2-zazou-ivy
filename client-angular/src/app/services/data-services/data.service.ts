@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../../models/user/user';
+import { Post } from '../../models/post/post';
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +23,11 @@ export class DataService {
     );
     return obsDataById;
   }
+  public fetchPosts(id: string): Observable<Post[]> {
+    let postsObservable: Observable<Post[]> = this.httpClient.get<Post[]>(
+      "http://localhost:3000/posts"
+    );
+    return postsObservable;
+  }
+
 }
