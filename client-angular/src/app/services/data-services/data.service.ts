@@ -17,13 +17,14 @@ export class DataService {
     return usersObservable;
   }
 
-  public fetchUserById(id: string): Observable<User[]> {
-    let obsDataById: Observable<User[]> = this.httpClient.get<User[]>(
-      "http://localhost:3000/users/" + id
-    );
-    return obsDataById;
-  }
-  public fetchPosts(id: string): Observable<Post[]> {
+  // public fetchUserById(id: string): Observable<User[]> {
+  //   let obsDataById: Observable<User[]> = this.httpClient.get<User[]>(
+  //     "http://localhost:3000/users/" + id
+  //   );
+  //   return obsDataById;
+  // }
+
+  public fetchPosts(): Observable<Post[]> {
     let postsObservable: Observable<Post[]> = this.httpClient.get<Post[]>(
       "http://localhost:3000/posts"
     );
